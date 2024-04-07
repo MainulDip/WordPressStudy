@@ -1,4 +1,4 @@
-FROM wordpress:6.5.0-php8.1-apache
+FROM wordpress:5.8.1
 
 # Production image #
 # 1. Embed content
