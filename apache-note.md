@@ -1,4 +1,14 @@
-### Apache Installation:
+### Apache LAMP Installation (without docker):
+`adduser username` && `usermod -aG sudo username` to add a new user and assign sudo group and login this root access. Or skip this, if already logged in a sudo user.
+
+`sudo apt update` && `sudo apt install apache2`
+
+`sudo apt install mysql-server`
+
+`sudo apt install php libapache2-mod-php php-mysql` (bare minimum, install other package for optimal performance) and restart apache server to apply effects `sudo systemctl restart apache2`
+
+Next: To work with wordpress, follow https://ubuntu.com/tutorials/install-and-configure-wordpress#2-install-dependencies guide.
+
 
 ### Apache Management Frequently Used Commands:
 `systemctl status httpd`
@@ -37,14 +47,16 @@ Startup Script
 ### VirtualHost:
 Virtual Host refers to the practice of running more than one web site (such as company1.example.com and company2.example.com) on a single machine. This can be ip or name based.
 
+Apache servers default to /var/www/html directories. For serving multiple website, directories can be created like `/var/www/first-site.com`, `/var/www/second-site.com`
+
 * defining a virtual host in `/etc/apache2/sites-available/your_domain.conf file
 
 ```conf
 <VirtualHost *:80>
     ServerAdmin webmaster@localhost
-    ServerName new_domain
-    ServerAlias www.new_domain
-    DocumentRoot /var/www/new_domain
+    ServerName first-site.com
+    ServerAlias www.first-site.com
+    DocumentRoot /var/www/first-site
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>

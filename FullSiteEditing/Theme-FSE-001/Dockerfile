@@ -9,7 +9,7 @@ FROM wordpress:5.8.1
 RUN  rm -R $(ls -1 -d /usr/src/wordpress/wp-content/plugins/*) \
   && rm -R $(ls -1 -d /usr/src/wordpress/wp-content/themes/*)
 
-# Inject our Plugins, themes, etc. into the image.
+# Inject our Plugins, themes, etc. into the images
 COPY wp-content/ /usr/src/wordpress/wp-content
 COPY .htaccess /usr/src/wordpress/.htaccess
 COPY docker/docker-entrypoint-override.sh /usr/local/bin
