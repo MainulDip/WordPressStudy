@@ -1,4 +1,4 @@
-### Removing Category/Tag/Author Prefix:
+### Removing Category/Tag/Author's Prefix:
 
 ```php
 // problem
