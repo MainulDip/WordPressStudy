@@ -1,4 +1,4 @@
-### Nginx + WordPress:
+### Nginx + WordPress
 https://www.nginx.com/resources/wiki/start/topics/recipes/wordpress/
 
 ### Setting gzip
