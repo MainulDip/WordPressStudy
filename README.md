@@ -27,3 +27,11 @@ FastCGI is the improved version. And `PHP-FPM` (php firstCGI Process Manager) is
 
 
 https://medium.com/@miladev95/cgi-vs-fastcgi-vs-php-fpm-afbc5a886d6d
+
+### Next Following:
+=> Linux Networking (https://youtu.be/2doSoMN2xvI?si=wmPz9jPjGgnjLTx-)
+=> Docker Networking
+=> Linux Security
+=> Docker Security
+=> Docker Production Workflow (Shell script to Install docker, docker-compose, build image and run)
+=> Backing Up Live WordPress To External Source (possibly DB)

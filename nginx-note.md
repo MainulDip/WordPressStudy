@@ -1,7 +1,7 @@
 ### Nginx + WordPress:
 https://www.nginx.com/resources/wiki/start/topics/recipes/wordpress/
 
-### Setting gzip:
+### Setting gzip
 Inside `nginx.conf`, `http` block is the recommended place for enabling gzip. `server` or `location` can also be used
 ```conf
 gzip on;

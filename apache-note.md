@@ -44,7 +44,7 @@ Startup Script
 `IfModule` => define default file to load, ie `index.html` if no file specified on the requested url path
 `Files` => to restrict/allowed specified file to server, like restricting `.htaccess` 
 
-### VirtualHost:
+### VirtualHost
 Virtual Host refers to the practice of running more than one web site (such as company1.example.com and company2.example.com) on a single machine. This can be ip or name based.
 
 Apache servers default to /var/www/html directories. For serving multiple website, directories can be created like `/var/www/first-site.com`, `/var/www/second-site.com`
