@@ -31,3 +31,17 @@ https://aws.amazon.com/compare/the-difference-between-public-cloud-and-private-c
 vps vs vpc : https://www.techtarget.com/searchitoperations/tip/Understand-the-differences-between-VPS-vs-VPC
 https://stackoverflow.com/questions/59067920/when-to-use-public-subnet-vs-private-subnet
 https://stackoverflow.com/questions/75621070/hosting-my-docker-container-in-public-or-private-subnet
+
+
+### Gateways:
+A Gateway allows to communicate between two networks with different transmission protocols. All traffic incoming/outgoing must have to passes through a gateway. 
+
+A router is the most common and well-known type of gateway, connecting home or business networks with the outside open world internet. There are a variety of other types of networking gateways, including web application firewalls, cloud storage gateways, API gateways, IoT gateways, media gateways, email security gateways and voice over IP gateways, among others. 
+
+Microsoft Windows, the Internet Connection Sharing feature allows a computer to act as a gateway by offering a connection between the Internet and an internal network
+
+For VPC's, a `internet gateway` Gateways connect VPC's public subnet with external network, like public internet. the `internet gateway` have to be attached with the vpc and the vpc's router through `route table`
+
+`internet gateway` - a vpc is required to have and attached an internet gateway to be accessible
+`transit gateway`
+`NAT gateway`
