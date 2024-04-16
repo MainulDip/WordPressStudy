@@ -44,4 +44,23 @@ For VPC's, a `internet gateway` Gateways connect VPC's public subnet with extern
 
 `internet gateway` - a vpc is required to have and attached an internet gateway to be accessible
 `transit gateway`
-`NAT gateway`
+`NAT gateway` - `Network Address Translation Gateway` is usually used with a private VPC to restrict incoming and only allow outgoing access. 
+
+### DHCP (Dynamic Host Configuration Protocol):
+DHCP (Dynamic Host Configuration Protocol) is a network management protocol used to dynamically assign an IP address to any device, or node, on a network so it can communicate using IP. DHCP automates and centrally manages these configurations rather than requiring network administrators to manually assign IP addresses to all network devices. DHCP can be implemented on small local networks, as well as large enterprise networks.
+
+DHCP assigns new IP addresses in each location when devices are moved from place to place, which means network administrators do not have to manually configure each device with a valid IP address or reconfigure the device with a new IP address if it moves to a new location on the network.
+
+### Networking Protocols:
+https://www.solarwinds.com/resources/it-glossary/network-protocols
+
+### OSI model layers:
+https://www.solarwinds.com/resources/it-glossary/network-protocols
+
+### Docker networking:
+`ip address show` will show all the networks in the os 
+`sudo docker network ls` will show all the available networks created by docker. `DRIVER` means the `Network Type`. There are 7 Driver/Network-Type in Docker, `bridge, host, null, etc`
+
+`bridge` is the default network for docker. If a deployed container has no specified network, it gets the bridge default network. 
+
+* When container are deployed (without specifying any network), same number of virtual switch are created (as ethernet interface) which connects/links those containers with the default bridge network. Each container has it's own virtual ethernet interface, which is used for connecting with the switch. `bridge link` cmd will show all the linked networks (if any).

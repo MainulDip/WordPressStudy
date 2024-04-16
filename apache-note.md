@@ -68,7 +68,6 @@ To disable the default site on the server, run `sudo a2dissite 000-default.conf`
 
 ### Enable gzip in `.htaccess`:
 For gzip-ing there are 2 apache mods `mod_deflate` (most widely supported) and `mod_gzip`. Either can be used inside .htaccess file
-
 * Using mod_deflate
 ```.htaccess
 <IfModule mod_deflate.c>
