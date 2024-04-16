@@ -33,5 +33,5 @@ https://medium.com/@miladev95/cgi-vs-fastcgi-vs-php-fpm-afbc5a886d6d
 => Docker Networking
 => Linux Security
 => Docker Security
-=> Docker Production Workflow (Shell script to Install docker, docker-compose, build image and run)
+=> Docker Production Workflow (Shell script to Install docker, docker-compose, build image and run).
 => Backing Up Live WordPress To External Source (possibly DB).
