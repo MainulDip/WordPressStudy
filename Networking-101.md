@@ -94,7 +94,7 @@ the Open Systems Interface (OSI), demonstrates how computer systems communicate 
 
 7. Layer 7 - `Application Layer` => The top layer of the network, the application layer, is accessed by end-user software such as web browsers and email clients. Protocols at this layer allow applications to send and receive information and present easy-to-understand and relevant data to users.
 
-https://www.solarwinds.com/resources/it-glossary/network-protocols
+https://www.solarwinds.com/resources/it-glossary/network-protocols.
 
 ### Docker networking:
 `ip address show` will show all the networks in the os 
