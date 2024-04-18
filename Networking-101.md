@@ -88,7 +88,7 @@ the Open Systems Interface (OSI), demonstrates how computer systems communicate 
 
 4. Layer 4 - `Transport Layer` => breaks data into “segments” and is reassembled on the receiving end. Manages data control flow and monitors errors.
 
-5. Layer 5 - `Session Layer` => establishes a communication channel called a session between the devices that want to exchange data.
+5. Layer 5 - `Session Layer` => establishes a communication channel called a session between the devices that want to exchange data
 
 6. Layer 6 - `Presentation Layer` => This layer arranges data for the application layer by ensuring the correct representation concerning information syntax and semantics. It also controls file-level security by defining how the connected devices should encrypt and compress data to provide accurate data transmission at the receiver’s end.
 

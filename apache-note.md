@@ -102,8 +102,8 @@ For gzip-ing there are 2 apache mods `mod_deflate` (most widely supported) and `
 </IfModule>
 ```
 
-* Using `mod_gzip`
 
+* Using `mod_gzip`
 ```.htaccess
 <ifModule mod_gzip.c>
 mod_gzip_on Yes
