@@ -1,5 +1,37 @@
 ## Overview:
 This is a personalized mini Docs or guide for day to day used wordpress development.
+### WordPress Dev Environment Setup (Official):
+https://github.com/WordPress/wordpress-develop
+
+After Node.js and Docker install, download the repo by `git clone https://github.com/WordPress/wordpress-develop.git` and use node.js to manage everything (Docker Container, ect). After running all these (for the first time), WordPress will be available at `http://localhost:8889`
+```sh
+npm install
+npm run build:dev
+npm run env:start # may need sudo as docker is involved
+npm run env:install # may need sudo as docker is involved
+```
+
+`npm run dev` to start dev server
+
+`npm run env:cli -- <command>` to run WP-cli commands or `npm run env:cli -- help` to see available commands
+
+
+Environment management commands
+```sh
+npm run env:restart # restart the dev env with modified docker-compose.yml
+npm run env:stop # stop dev env
+npm run env:start # start dev env, docker containers
+npm run env:reset # will reset everything, including docker mysql db
+```
+
+Running Tests
+```sh
+npm run test:php
+npm run test:e2e
+
+npm run test:php -- --filter <test name>
+npm run test:php -- --group <group name or ticket number>
+```
 
 ### Theme Development:
 Theme can be Classic or Block Based. Block Based theme can support full site editing. 
