@@ -3,7 +3,7 @@ This is a personalized mini Docs or guide for day to day used wordpress developm
 ### WordPress Dev Environment Setup (Official):
 https://github.com/WordPress/wordpress-develop
 
-After Node.js and Docker install, download the repo by `git clone https://github.com/WordPress/wordpress-develop.git` and use node.js to manage everything (Docker Container, ect). After running all these (for the first time), WordPress will be available at `http://localhost:8889`
+After Node.js and Docker install, download the repo by `git clone https://github.com/WordPress/wordpress-develop.git` and use node.js to manage everything (Docker Container, ect). After running all these (for the first time), WordPress will be available at `http://localhost:8889`. Also change the dev mode in wp-config.php to `define( 'WP_DEVELOPMENT_MODE', 'theme' );` for theme development.
 ```sh
 npm install
 npm run build:dev
