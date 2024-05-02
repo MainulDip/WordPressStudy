@@ -33,6 +33,22 @@ npm run test:php -- --filter <test name>
 npm run test:php -- --group <group name or ticket number>
 ```
 
+### WordPress Dev Workflows:
+Start coding
+```sh
+npm run env:start # start everything necessary, hop into localhost:8889
+npm run dev # to compile all and run all the npm packages (parsing js, minify, and watch mode)
+```
+
+### install latest version of Gutenberg:
+From plugin directory `git clone https://github.com/WordPress/gutenberg`
+and then
+```sh
+cd gutenberg
+npm install
+npm run build
+```
+
 ### Theme Development:
 Theme can be Classic or Block Based. Block Based theme can support full site editing. 
 
