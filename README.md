@@ -33,6 +33,8 @@ npm run test:php -- --filter <test name>
 npm run test:php -- --group <group name or ticket number>
 ```
 
+* wp-admin's default username = `admin` and password = `password`
+
 ### WordPress Dev Workflows:
 Start coding
 ```sh

@@ -44,7 +44,7 @@
 4. Always ensure if everything working correctly
 
 ### Firewall Setting:
-1. check all the open port on the server by `sudo ss -tupln`.
+1. check all the open port on the server by `sudo ss -tupln`
 2. install `UFW` as firewall (Un-Complected Firewall) by `sudo apt install ufw` check status by `sudo ufw status`
 3. Before enabling allow all the necessary ports, most importantly `ssh` port by `sudo ufw allow ssh_port` (for web server port allow `sudo ufw allow 80/tcp`)
 4. After allowing ssh and other port enable the firewall by `sudo ufw enable` and before quilting the ssh session, check if everything working
