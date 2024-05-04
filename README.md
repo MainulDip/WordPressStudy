@@ -42,6 +42,10 @@ npm run env:start # start everything necessary, hop into localhost:8889
 npm run dev # to compile all and run all the npm packages (parsing js, minify, and watch mode)
 ```
 
+
+### Code Formatting `WP Block Html`:
+`npm install -D prettier prettier-plugin-wp-block-html` from https://github.com/co6x0/prettier-plugin-wp-block-html
+
 ### install latest version of Gutenberg:
 From plugin directory `git clone https://github.com/WordPress/gutenberg`
 and then
