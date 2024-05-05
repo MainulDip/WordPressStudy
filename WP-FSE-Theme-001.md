@@ -74,3 +74,35 @@ theme.json (inside theme root) is a configuration file for enabling and disablin
     }
 }
 ```
+
+
+### Theme Support:
+post-thumbnails, editor-styles, responsive-embeds, automatic-feed-links, html5 styles, and html5 scripts are automatically enabled for block themes.
+
+Don't need to register widget areas and menus, and theme support for a custom logo, custom header, or colors..
+
+Adding theme support for wp-block-styles is optional. Adding theme support for wp-block-styles is optional. This file includes the combined CSS from the theme.scss file that some blocks use (not recommended).
+
+```php
+// Don't need this
+if ( ! function_exists( 'lesson_one_setup' ) ) {
+	function lesson_one_setup() {
+            add_theme_support( 'wp-block-styles' );
+        }
+}
+add_action( 'after_setup_theme', 'lesson_one_setup' );
+```
+
+### HTML meta and body elements:
+WordPress will automatically add all the meta tags and other structures (`<body>`, etc). `hooks and filters` are the only way to modify those meta tags
+
+Templates and blocks are loaded in the <body> element, inside a <div> with the class wp-site-blocks. These are provided by WordPress.
+
+```php
+<body>
+<div class="wp-site-blocks">
+// Templates and Blocks
+</div>
+</body>
+```
+

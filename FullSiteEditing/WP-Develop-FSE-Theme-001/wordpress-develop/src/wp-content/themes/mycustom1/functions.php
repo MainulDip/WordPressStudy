@@ -13,7 +13,7 @@
  * 
  * @since 1.0.0
  */
-function lession_one_style () {
+function first_style () {
     wp_enqueue_style(
         'style_one',
         get_stylesheet_uri(),
@@ -21,3 +21,6 @@ function lession_one_style () {
         wp_get_theme()->get('Version')
     );
 }
+
+// enqueue stylesheet
+add_action('wp_enqueue_scripts','first_style');
