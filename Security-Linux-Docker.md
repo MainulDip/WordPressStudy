@@ -61,4 +61,4 @@
 => Use multi-stage built and a `distroless image`.
 => Use container optimized distribution (by google, etc)
 => scan images for vulnerability (tools like, anchore, clair, ect)
-=> Don't install software blindly
+=> Don't install software blindly, might cause security leak

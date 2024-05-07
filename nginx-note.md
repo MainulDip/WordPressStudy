@@ -11,4 +11,4 @@ gzip_vary on;
 gzip_proxied no-cache no-store private expired auth;
 gzip_diable “MSIE [1-6];
 ```
-### Load
+### Load Balancers:

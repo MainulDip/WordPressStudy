@@ -100,7 +100,7 @@ https://www.solarwinds.com/resources/it-glossary/network-protocols.
 `ip address show` will show all the networks in the os 
 `sudo docker network ls` will show all the available networks created by docker. `DRIVER` means the `Network Type`. There are 7 Driver/Network-Type in Docker, `bridge, host, null, etc`
 
-`bridge` is the default network for docker. If a deployed container has no specified network, it gets the bridge default network. 
+`bridge` is the default network for docker. If a deployed container has no specified network, it gets the bridge default network
 
 * When container are deployed (without specifying any network), same number of virtual switch are created (as ethernet interface) which connects/links those containers with the default bridge network. Each container has it's own virtual ethernet interface, which is used for connecting with the switch. `bridge link` cmd will show all the linked networks (if any).
 
