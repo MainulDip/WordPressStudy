@@ -1,5 +1,5 @@
 ## Overview:
-This is a personalized mini Docs or guide for day to day used wordpress development.
+This is a personalized mini Docs or guide for day to day used wordpress development. Start from here https://developer.wordpress.org/
 ### WordPress Dev Environment Setup (Official):
 https://github.com/WordPress/wordpress-develop
 
