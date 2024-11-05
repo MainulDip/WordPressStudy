@@ -1,5 +1,6 @@
 ### Overviews:
-
+My thinking is derailed 🤪 I'm tied up to the tracks 
+The train of consequences 💀 There ain't no turning back
 ### `theme.json` Configuration file | Optional but foundational:
 it's a configuration file for enabling certain wordpress settings, style specific elements and blocks, and which templates and template parts to register.
 
