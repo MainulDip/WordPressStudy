@@ -96,7 +96,7 @@ add_action( 'after_setup_theme', 'lesson_one_setup' );
 ### HTML meta and body elements:
 WordPress will automatically add all the meta tags and other structures (`<body>`, etc). `hooks and filters` are the only way to modify those meta tags
 
-Templates and blocks are loaded in the <body> element, inside a <div> with the class wp-site-blocks. These are provided by WordPress.
+Templates and blocks are loaded in the <body> element, inside a <div> with the class wp-site-blocks. These are provided by WordPress
 
 ```php
 <body>
