@@ -20,4 +20,4 @@ Some of the things you can do with theme.json are:
 - Child theme theme.json: If active, will override parent's theme.json
 - User configuration: Users can further customize how their site works under Appearance > Editor in the WordPress admin, and the JSON data is saved in their site’s database. Their choice takes priority over all other levels in the hierarchy.
 
-There are also filter hooks available that let plugin and theme authors override the values dynamically. https://developer.wordpress.org/news/2023/07/05/how-to-modify-theme-json-data-using-server-side-filters/
+There are also filter hooks available that let plugin and theme authors override the values dynamically. https://developer.wordpress.org/news/2023/07/05/how-to-modify-theme-json-data-using-server-side-filters/.......
