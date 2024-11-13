@@ -1,4 +1,4 @@
-### Overviews:
+### FSE Theming (Full Site Editing):
 My thinking is derailed 🤪 I'm tied up to the tracks 
 The train of consequences 💀 There ain't no turning back
 ### `theme.json` Configuration file | Optional but foundational:

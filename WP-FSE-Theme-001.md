@@ -41,7 +41,7 @@ Text Domain: The string used for textdomain for translation. The theme slug.
 6. for more customization control optionally add `functions.php`
 
 ### Template Hierarchy in new FSE theme:
-The new block theme replaces `.php` with `.html` files (and the addition of `templates` dir). So `index.php` becomes `/templates/index.html` and `404.php` becomes `/templates/404.html`
+The new block theme replaces `.php` with `.html` files (and the addition of `templates` dir). So `index.php` becomes `/templates/index.html` and `404.php` becomes `/templates/404.html`.......
 
 - index
 - 404
