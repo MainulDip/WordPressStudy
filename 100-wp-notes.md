@@ -69,4 +69,5 @@ Both are PHP baaed, But Hybrid will include `theme.json` file and other FSE feat
 
 
 ### Ongoing:
-https://developer.wordpress.org/block-editor/getting-started/devenv/get-started-with-wp-env/#ubuntu-docker-setup.......
+- setup media and mysql db sync across machines via git repository pull
+- block development https://developer.wordpress.org/block-editor/getting-started/devenv/get-started-with-create-block/

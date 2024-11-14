@@ -31,6 +31,8 @@ To uninstall wp-env `npm -g uninstall @wordpress/env`
 Start docker `sudo systemctl start docker.service`, to troubleshoot https://developer.wordpress.org/block-editor/getting-started/devenv/get-started-with-wp-env/#ubuntu-docker-setup
 
 `ps -ef | grep docker` to check docker process is running or not
+`docker rm -v -f $(docker ps -qa)` to remove all docker container
+`docker rm -f $(docker ps -qa)` forced remove but not volumes
 
 
 ### `wp-env` configuration `.wp-env.json` for `plugin`, `theme`:
@@ -38,21 +40,26 @@ For plugin development touch a `.wp-env.json` file with the following values in 
 ```json
 {
     // "core": "WordPress/WordPress#master", // for latest wp
-    "core": null,
-    "plugins": [ "." ]
+    "core": null, // will pull current version
+    "plugins": [ "." ], // current directory as a plugin
+    "themes": [ "WordPress/theme-experiments" ] // optionally specify
 }
 ```
-
 
 - the key `env` is available to override aforementioned state for individual environment (development & tests)
 
 - ports can be set with environment variables WP_ENV_PORT, WP_ENV_TESTS_PORT, WP_ENV_MYSQL_PORT and WP_ENV_TESTS_MYSQL_PORT.
 
-https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/#wp-env-json
 ```json
 {
     "plugins": [ "." ],
     "port": 4013, // custom port
+    "mappings": {
+        "wp-content/mu-plugins": "./path/to/local/mu-plugins",
+        "wp-content/themes": "./path/to/local/themes",
+        "wp-content/themes/specific-theme": "./path/to/local/theme-1",
+        ".htaccess": ".htaccess"
+    },
     "config": {
         "KEY_1": true,
         "KEY_2": false
@@ -71,3 +78,5 @@ https://developer.wordpress.org/block-editor/reference-guides/packages/packages-
     }
 }
 ```
+
+https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/#wp-env-json

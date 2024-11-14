@@ -11,7 +11,7 @@ To create a block plugin use `npx @wordpress/create-block@latest <block-plugin-n
 Then
 `npx wp-env start` from `theme` or `plugin` directory
 `npx wp-env start` to clean everything `wp-env clean all`
-`docker rm -v -f $(docker ps -qa)`
+`docker rm -v -f $(docker ps -qa)` // to remove all docker container
 
 ### When Docker needs `sudo`:
 add group `this` and `sudo usermod -aG docker $USER`
