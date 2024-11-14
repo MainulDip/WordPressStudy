@@ -8,7 +8,7 @@ it's a configuration file for enabling certain wordpress settings, style specifi
 
 Some of the things you can do with theme.json are:
 
-- Enable or disable features like drop caps, padding, margin, and line-height.
+- Enable or disable features like drop caps, padding, margin, and line-height.......
 - Add a color palette, gradients, duotones, and shadows.
 - Configure typographical features like font families, sizes, and more.
 - Add CSS custom properties.......
