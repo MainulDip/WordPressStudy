@@ -9,8 +9,12 @@
 ### Node version manager (NVM):
 
 ### `wp-env | @wordpress/env`:
-Requires `Docker` to be installed. Then install the wp-env package globally
-- `npm -g install @wordpress/env`
+Requires `Docker` to be installed. Then install the wp-env package globally `npm -g install @wordpress/env`
+
+Alternative use `npx` to avoid global installation like `npx wp-env start`. Or use locally by `npm i @wordpress/env --save-dev`.
+
+For local dev dependency, use `npm init` on plugin's directory and install `wp-env` locally.
+Also, for block plugin `npx @wordpress/create-block@latest <block-plugin-name>` will create a boilerplate block plugin.
 
 Then navigate to an existing plugin directory, theme directory, or a new working directory in the terminal and run
 - `wp-env start` or `npm run start wp-env` and `wp-env stop` to stop
@@ -27,3 +31,28 @@ To uninstall wp-env `npm -g uninstall @wordpress/env`
 Start docker `sudo systemctl start docker.service`, to troubleshoot https://developer.wordpress.org/block-editor/getting-started/devenv/get-started-with-wp-env/#ubuntu-docker-setup
 
 `ps -ef | grep docker` to check docker process is running or not
+
+
+### Specify if `plugin`, `theme`:
+https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/#wp-env-json
+```json
+{
+    "plugins": [ "." ],
+    "config": {
+        "KEY_1": true,
+        "KEY_2": false
+    },
+    "env": {
+        "development": {
+            "themes": [ "./one-theme" ]
+        },
+        "tests": {
+            "config": {
+                "KEY_1": false
+            },
+            "port": 3000,
+            "mysqlPort": 13306
+        }
+    }
+}
+```
