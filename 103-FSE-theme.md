@@ -11,7 +11,7 @@ Some of the things you can do with theme.json are:
 - Enable or disable features like drop caps, padding, margin, and line-height.
 - Add a color palette, gradients, duotones, and shadows.
 - Configure typographical features like font families, sizes, and more.
-- Add CSS custom properties.
+- Add CSS custom properties.......
 - Register custom templates and assign parts to template part areas.
 
 ### hierarchy of different `theme.json`, low to high:
