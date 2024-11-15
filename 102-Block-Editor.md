@@ -12,15 +12,41 @@ then run `npx wp-env start`
 
 If you installed Docker Desktop first, then removed it and installed the Docker Engine, you may need to switch the Docker context with this command: `docker context use default`
 
+
+### Docker Management Commands:
+Show all processes `docker ps`
+
+
+### `wp-env | @wordpress/env`:
+Requires `Docker` to be installed. Then install the wp-env package globally `npm -g install @wordpress/env`
+
+Alternative use `npx` to avoid global installation like `npx wp-env start`. Or use locally by `npm i @wordpress/env --save-dev`.
+
+For local dev dependency, use `npm init` on plugin's directory and install `wp-env` locally.
+Also, for block plugin `npx @wordpress/create-block@latest <block-plugin-name>` will create a boilerplate block plugin.
+
+Then navigate to an existing plugin directory, theme directory, or a new working directory in the terminal and run
+- `wp-env start` or `npm run start wp-env` and `wp-env stop` to stop
+
+after completion, access the local environment at: http://localhost:8888. Log into the WordPress dashboard using username `admin` and password `password`.
+
+For custom env config use `.wp-env.json`, details on `@wordpress/env package`
+
+To reset and clean the wp database `wp-env clean all`
+To remove the local env for a specific project, run `wp-env destroy`
+To uninstall wp-env `npm -g uninstall @wordpress/env`
+
 ### Creation of Custom Block:
 Custom blocks for the Block Editor in WordPress are typically registered using plugins. 
 
-To create a block plugin use `npx @wordpress/create-block@latest <block-plugin-name>` command
+To create a block plugin use `npx @wordpress/create-block@latest <block-plugin-name>` command, check/populate `.wp-env.json` for targeted configuration
 
 Then
 `npx wp-env start` from `theme` or `plugin` directory
 `npx wp-env start` to clean everything `wp-env clean all`
 `docker rm -v -f $(docker ps -qa)` // to remove all docker container
+
+Then `npm run start` to start the dev server and hop into localhost:<port>
 
 
 ### `@wordpress/create-block` package:
