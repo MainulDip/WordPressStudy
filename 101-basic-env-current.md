@@ -46,7 +46,7 @@ For plugin development touch a `.wp-env.json` file with the following values in 
 }
 ```
 
-- the key `env` is available to override aforementioned state for individual environment (development & tests)
+- the key `env` is available to override aforementioned state for individual environment (development & tests).......
 
 - ports can be set with environment variables WP_ENV_PORT, WP_ENV_TESTS_PORT, WP_ENV_MYSQL_PORT and WP_ENV_TESTS_MYSQL_PORT.
 
