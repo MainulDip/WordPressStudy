@@ -28,7 +28,7 @@ To remove the local env for a specific project, run `wp-env destroy`
 To uninstall wp-env `npm -g uninstall @wordpress/env`
 
 ### Docker for wp-env:
-Start docker `sudo systemctl start docker.service`, to troubleshoot https://developer.wordpress.org/block-editor/getting-started/devenv/get-started-with-wp-env/#ubuntu-docker-setup
+Start docker `sudo systemctl start docker.service`, to troubleshoot https://developer.wordpress.org/block-editor/getting-started/devenv/get-started-with-wp-env/#ubuntu-docker-setup.......
 
 `ps -ef | grep docker` to check docker process is running or not
 `docker rm -v -f $(docker ps -qa)` to remove all docker container

@@ -36,6 +36,13 @@ To reset and clean the wp database `wp-env clean all`
 To remove the local env for a specific project, run `wp-env destroy`
 To uninstall wp-env `npm -g uninstall @wordpress/env`
 
+Another way is to use that as Dev dependency `npm i @wordpress/env -D`
+Then add scripts `"wp-env":"wp-env"` and run as `npm run wp-env start`
+
+`npx wp-env <cmd>` sometimes requires inclusion of `"wp-env":"wp-env"` in package.json scrips
+
+https://www.npmjs.com/package/@wordpress/env/v/2.0.0#installation-as-a-local-package
+
 ### Creation of Custom Block:
 Custom blocks for the Block Editor in WordPress are typically registered using plugins. 
 
@@ -150,3 +157,21 @@ Use `wp-scripts` to setup linters and test
     }
 }
 ```
+
+
+### Scaffold a Dynamic Block with `create-block`:
+Dynamic block scaffolding is done by specifying `--varian=dynamic`
+
+```sh
+npx @wordpress/create-block@latest give-a-name --variant=dynamic
+# Then cd into the newly created directory
+# add `.wp-env.json` to run a wordpress instance with this plugin
+# then install node package and run npx wp-env start
+```
+
+### Block's File Structure:
+`./<plugin-file>.php` => entry point to register the block
+`./src/block.json` => entry point block config & binding other scripts
+`./src/index.js` => linked by block.json, call `registerBlockType` fn for editor spot and link `edit.js`/`save.js` react component
+`./src/edit.js` => responsible for rendering the block’s editing UI, Settings. It will be imported and used by `registerBlockType` fn
+<img src="./docs-images/blocks-file-structure.png"/>
