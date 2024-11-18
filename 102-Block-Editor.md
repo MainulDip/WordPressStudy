@@ -170,8 +170,48 @@ npx @wordpress/create-block@latest give-a-name --variant=dynamic
 ```
 
 ### Block's File Structure:
-`./<plugin-file>.php` => entry point to register the block
-`./src/block.json` => entry point block config & binding other scripts
-`./src/index.js` => linked by block.json, call `registerBlockType` fn for editor spot and link `edit.js`/`save.js` react component
-`./src/edit.js` => responsible for rendering the block’s editing UI, Settings. It will be imported and used by `registerBlockType` fn
+- `./<plugin-file>.php` => entry point to register the block
+
+- `./src/block.json` => entry point block config & binding other scripts
+
+- `./src/index.js` => linked by block.json, call `registerBlockType` fn for editor spot and link `edit.js`/`save.js` react component
+
+- `./src/edit.js` => responsible for rendering the block’s editing UI, Settings. It will be imported and used by `registerBlockType` fn
+
+- `./src/save.js` => markup that's gonna be saved into WP DB. This gets passed to the save property of the registerBlockType fn.
+
+- `./src/render.php` => returns servers-side block markup, this file will take precedence over other ways to render the block’s markup on the front end.
+
+- `./src/view.js` => will be loaded in the front end when the block is displayed
+
+- `./src/editor.(css|scss|sass)` => contains the additional styles applied to the block in the Block Editor
+
+- `./src/style.(css|scss|sass)` => loaded in both the Block Editor and on the front end
+
 <img src="./docs-images/blocks-file-structure.png"/>
+
+Docs https://developer.wordpress.org/block-editor/getting-started/fundamentals/file-structure-of-a-block/
+
+### `block.json`notable props:
+```json
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/copyright-block-dynamic",
+	"version": "0.1.0",
+	"title": "Copyright Block Dynamic",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example block scaffolded with Create Block tool.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "copyright-block-dynamic",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}
+```

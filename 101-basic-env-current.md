@@ -36,7 +36,7 @@ Start docker `sudo systemctl start docker.service`, to troubleshoot https://deve
 
 
 ### `wp-env` configuration `.wp-env.json` for `plugin`, `theme`:
-For plugin development touch a `.wp-env.json` file with the following values in the plugin's directory
+For plugin development touch a `.wp-env.json` file with the following values in the plugin's directory.......
 ```json
 {
     // "core": "WordPress/WordPress#master", // for latest wp
