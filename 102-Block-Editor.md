@@ -215,3 +215,23 @@ Docs https://developer.wordpress.org/block-editor/getting-started/fundamentals/f
 	"viewScript": "file:./view.js"
 }
 ```
+
+### Block Support | Adding/Removing:
+This the `support` prop inside `block.json` is the configuration part for adding and removing customization options for the block in the editor dashboard.
+
+* configuration part for editor support
+
+```json
+"supports": {
+    "color": {
+        "background": false,
+        "text": true
+    },
+    "html": false,
+    "typography": {
+        "fontSize": true
+    }
+},
+```
+
+Docs : https://developer.wordpress.org/block-editor/reference-guides/block-api/block-supports/

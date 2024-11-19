@@ -3,10 +3,10 @@
   "apiVersion": 3,
   "name": "create-block/copyright-block-dynamic",
   "version": "0.1.0",
-  "title": "Copyright Block Dynamic",
+  "title": "CopyrightD",
   "category": "widgets",
-  "icon": "smiley",
-  "description": "Example block scaffolded with Create Block tool.",
+  "icon": "palmtree",
+  "description": "Copyright icon following string",
   "example": {},
   "supports": {
     "html": false
