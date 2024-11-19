@@ -174,7 +174,7 @@ npx @wordpress/create-block@latest give-a-name --variant=dynamic
 
 - `./src/block.json` => entry point block config & binding other scripts
 
-- `./src/index.js` => linked by block.json, call `registerBlockType` fn for editor spot and link `edit.js`/`save.js` react component
+- `./src/index.js` => linked by block.json, main JavaScript file of the block and is used to register it on the client, call `registerBlockType` fn for editor spot and link `edit.js`/`save.js` react component
 
 - `./src/edit.js` => responsible for rendering the block’s editing UI, Settings. It will be imported and used by `registerBlockType` fn
 

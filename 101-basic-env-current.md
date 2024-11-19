@@ -24,7 +24,7 @@ after completion, access the local environment at: http://localhost:8888. Log in
 For custom env config use `.wp-env.json`, details on `@wordpress/env package`
 
 To reset and clean the wp database `wp-env clean all`
-To remove the local env for a specific project, run `wp-env destroy`
+To remove the local env for a specific project, run `wp-env destroy`.......
 To uninstall wp-env `npm -g uninstall @wordpress/env`
 
 ### Docker for wp-env:
