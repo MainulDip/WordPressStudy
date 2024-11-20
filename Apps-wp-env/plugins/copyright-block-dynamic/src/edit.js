@@ -33,7 +33,7 @@ export default function Edit() {
 	return (
 		<p { ...useBlockProps() }>
 			{ __(
-				'Copyright Block Dynamic – hello from the editor!',
+				'Copyright Block Dynamic – hello from the editor! aka edit.js',
 				'copyright-block-dynamic'
 			) }
 		</p>

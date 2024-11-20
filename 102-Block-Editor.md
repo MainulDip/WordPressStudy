@@ -234,4 +234,22 @@ This the `support` prop inside `block.json` is the configuration part for adding
 },
 ```
 
-Docs : https://developer.wordpress.org/block-editor/reference-guides/block-api/block-supports/
+Detail Support Property Docs : https://developer.wordpress.org/block-editor/reference-guides/block-api/block-supports/
+
+### index.js's `registerBlockType` function:
+it accepts a block's unique name as 1st param (inject form `block.json`) and on optional second param of type `settings?: Partial<BlockConfiguration<TAttributes>>`, an object containing various `React Components`
+
+```jsx
+import Edit from './edit'; // a react component
+import metadata from './block.json';
+const calendarIcon = (
+    <svg>
+    {/* svg props */}
+    </svg>
+);
+
+registerBlockType( metadata.name, {
+    icon: calendarIcon,
+    edit: Edit
+} );
+```

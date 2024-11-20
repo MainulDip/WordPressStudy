@@ -4,5 +4,5 @@
  */
 ?>
 <p <?php echo get_block_wrapper_attributes(); ?>>
-	<?php esc_html_e( 'Copyright Block Dynamic – hello from a dynamic block!', 'copyright-block-dynamic' ); ?>
+	<?php esc_html_e( 'Copyright Block Dynamic – hello from a dynamic block\'s render.php!', 'copyright-block-dynamic' ); ?>
 </p>
