@@ -21,5 +21,5 @@
  */
 
 /* eslint-disable no-console */
-console.log( 'Hello World! (from create-block-copyright-block-dynamic block)' );
+console.log( 'Hello World! (from create-block-copyright-block-dynamic block form view.js)' );
 /* eslint-enable no-console */

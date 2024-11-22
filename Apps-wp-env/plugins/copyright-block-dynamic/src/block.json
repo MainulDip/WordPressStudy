@@ -5,9 +5,16 @@
 	"version": "0.1.0",
 	"title": "CopyrightD",
 	"category": "widgets",
-	"icon": "palmtree",
 	"description": "Copyright icon following string",
 	"example": {},
+	"attributes": {
+		"showStartingYear": {
+			"type": "boolean"
+		},
+		"startingYear": {
+			"type": "string"
+		}
+	},
 	"supports": {
 		"color": {
 			"background": false,

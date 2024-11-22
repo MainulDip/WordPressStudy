@@ -1,4 +1,8 @@
-### Overviews:
+### init:
+Alter cloning run sequentially to start tweaking
+`npm install`
+`npm run wp-env start`
+`npm run start`
 
 
 ### Temp code:

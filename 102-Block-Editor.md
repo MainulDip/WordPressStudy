@@ -253,3 +253,51 @@ registerBlockType( metadata.name, {
     edit: Edit
 } );
 ```
+
+### `edit.js`:
+controls how the block functions and appears in the Editor.
+`useBlockProps` returns necessary css classes and styles for block's wrapper in the editor. for render.php its `get_block_wrapper_attributes()` in front-end.
+
+* edit.js
+```jsx
+const currentYear = new Date().getFullYear().toString();
+
+export default function Edit() {
+	return (
+		<p { ...useBlockProps() }>
+			{ __(
+				`©${currentYear} hello from the editor! aka edit.js`,
+				'copyright-block-dynamic'
+			) }
+		</p>
+	);
+}
+```
+* render.php
+```php
+<?php ?>
+
+<p <?php echo get_block_wrapper_attributes(); ?>>
+	<?php esc_html_e( '@' . date("Y") . ' render.php!', 'copyright-block-dynamic' ); ?>
+</p>
+```
+
+Block Wrapper : https://developer.wordpress.org/block-editor/getting-started/fundamentals/block-wrapper/
+
+
+### Block attributes:
+Attributes are used to store custom data for block’s markup and content.
+Block attributes are generally specified in the block.json file, and the editor ui for those attribute values needs to be hooked in `edit.js`
+
+```json
+"attributes": {
+    "showStartingYear": {
+        "type": "boolean"
+    },
+    "startingYear": {
+        "type": "string"
+    }
+},
+```
+
+docs https://developer.wordpress.org/block-editor/reference-guides/block-api/block-attributes/
