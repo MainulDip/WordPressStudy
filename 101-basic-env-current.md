@@ -4,7 +4,7 @@
 `wp-now` lightweight tool for quickly testing WordPress releases, plugins, and themes locally. Its powered by `WordPress Playground` and still experimental.
 
 `local` for local development setup with GUI, by WP Engine, https://localwp.com/
-`WP Studio` local alternative, maintained by Automatic, https://developer.wordpress.com/studio/
+`WP Studio` local alternative, maintained by Automatic, https://developer.wordpress.com/studio/.......
 
 ### Node version manager (NVM):
 

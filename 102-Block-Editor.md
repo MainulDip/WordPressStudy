@@ -300,8 +300,25 @@ Block attributes are generally specified in the block.json file, and the editor 
 },
 ```
 
+There are some wp built in components that automatically hooked into dashboard's editor interface, ie, `InspectorControls` form `@wordpress/block-editor`. To read/set/update values on this attributes, the `Edit` function can accept `attribute, setAttribute` as its prop
+
+```js
+export default function Edit({attribute, setAttribute}) {
+	const { showStartingYear, startingYear } = attribute;
+    // ... code
+}
+```
+
 docs https://developer.wordpress.org/block-editor/reference-guides/block-api/block-attributes/
 
 
 ### Official available Editor UI Components | `@wordpress/components`:
 Get IDE intellisense by installing `npm i @wordpress/components -D`
+
+
+### Questions to solve:
+=> How to get all the type information of `registerBlockType` fun
+    - possible (https://www.npmjs.com/package/@wordpress/blocks)
+    - possible watch interactivity api typescript example
+    - possible `@types/wordpress__block-editor` npm package, but find official solution first.
+    - also `@wordpress/components` typescript usages https://developer.wordpress.org/block-editor/reference-guides/packages/packages-components/#typescript

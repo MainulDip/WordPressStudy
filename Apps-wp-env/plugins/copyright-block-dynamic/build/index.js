@@ -26,23 +26,33 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const currentYear = new Date().getFullYear().toString();
 function Edit({
-  attribute,
-  setAttribute
+  attributes,
+  setAttributes
 }) {
   const {
     showStartingYear,
     startingYear
-  } = attribute;
+  } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Settings", "copyright-date-block")
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Settings", "copyright-date-block"),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+          __nextHasNoMarginBottom: true,
+          __next40pxDefaultSize: true,
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Starting year", "copyright-date-block"),
+          value: startingYear || "",
+          onChange: value => setAttributes({
+            startingYear: value
+          })
+        })
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
       ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
-      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)(`©${currentYear} hello from the editor! aka edit.js`, 'copyright-block-dynamic')
+      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)(`©${startingYear}${startingYear == "" ? "" : "-"}${currentYear} hello from the editor! aka edit.js`, 'copyright-block-dynamic')
     })]
   });
 }
@@ -164,7 +174,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/copyright-block-dynamic","version":"0.1.0","title":"CopyrightD","category":"widgets","description":"Copyright icon following string","example":{},"attributes":{"showStartingYear":{"type":"boolean"},"startingYear":{"type":"string"}},"supports":{"color":{"background":false,"text":true},"html":false,"typography":{"fontSize":true}},"textdomain":"copyright-block-dynamic","editorScript":"file:./index.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/copyright-block-dynamic","version":"0.1.0","title":"CopyrightD","category":"widgets","description":"Copyright icon following string","example":{},"attributes":{"showStartingYear":{"type":"boolean"},"startingYear":{"type":"string","default":""}},"supports":{"color":{"background":false,"text":true},"html":false,"typography":{"fontSize":true}},"textdomain":"copyright-block-dynamic","editorScript":"file:./index.js","render":"file:./render.php"}');
 
 /***/ })
 

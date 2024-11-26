@@ -12,7 +12,8 @@
       "type": "boolean"
     },
     "startingYear": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     }
   },
   "supports": {
