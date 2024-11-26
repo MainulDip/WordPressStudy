@@ -30,7 +30,7 @@ export default function Edit({ attributes, setAttributes }) {
 					label={__("Show Starting Year", DOMAIN)}
 					onChange={(value) => {
 						setAttributes({showStartingYear: value})
-						if (!value) setAttributes({ startingYear: "" })
+						if (value == false) setAttributes({ startingYear: "" })
 					}}
 					/>
 

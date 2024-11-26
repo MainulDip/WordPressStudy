@@ -309,7 +309,7 @@ export default function Edit({attribute, setAttribute}) {
 }
 ```
 
-docs https://developer.wordpress.org/block-editor/reference-guides/block-api/block-attributes/
+docs on block attributes https://developer.wordpress.org/block-editor/reference-guides/block-api/block-attributes/
 
 
 ### Official available Editor UI Components | `@wordpress/components`:

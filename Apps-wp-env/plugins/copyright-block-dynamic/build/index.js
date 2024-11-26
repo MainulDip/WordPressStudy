@@ -60,7 +60,7 @@ function Edit({
             setAttributes({
               showStartingYear: value
             });
-            if (!value) setAttributes({
+            if (value == false) setAttributes({
               startingYear: ""
             });
           }
