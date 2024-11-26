@@ -3,25 +3,48 @@ import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import './editor.scss';
 import { PanelBody } from "@wordpress/components";
 import { TextControl } from "@wordpress/components";
+import { DOMAIN } from ".";
+import { ToggleControl } from "@wordpress/components";
+import { useEffect } from "react"
 
 
 const currentYear = new Date().getFullYear().toString();
 
 export default function Edit({ attributes, setAttributes }) {
 	const { showStartingYear, startingYear } = attributes;
+	// console.log(showStartingYear, startingYear);
+
+	// useEffect(() => {
+	// 	console.log(`useEffect showStartingYear = ${showStartingYear}`)
+	// 	if (!showStartingYear) setAttributes({ startingYear: "" })
+	// }, [showStartingYear]);
+	
+
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__("Settings", "copyright-date-block")}>
-					<TextControl
+				<PanelBody title={__("Settings", DOMAIN)}>
+
+					<ToggleControl
+					checked={ !! showStartingYear }
+					label={__("Show Starting Year", DOMAIN)}
+					onChange={(value) => {
+						setAttributes({showStartingYear: value})
+						if (!value) setAttributes({ startingYear: "" })
+					}}
+					/>
+
+					{ showStartingYear && (
+						<TextControl
 						__nextHasNoMarginBottom
 						__next40pxDefaultSize
 						label={
-							__("Starting year", "copyright-date-block")
+							__("Starting year", DOMAIN)
 						}
 						value={startingYear || ""}
 						onChange={(value) => setAttributes({ startingYear: value })}
 					/>
+					)}
 				</PanelBody>
 			</InspectorControls>
 			<p {...useBlockProps()}>

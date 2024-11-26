@@ -3,6 +3,8 @@ import './style.scss';
 import Edit from './edit';
 import metadata from './block.json';
 
+export const DOMAIN = "copyright-block-dynamic";
+
 const calendarIcon = (
     <svg
         viewBox="0 0 24 24"

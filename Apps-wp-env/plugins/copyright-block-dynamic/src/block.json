@@ -9,7 +9,8 @@
 	"example": {},
 	"attributes": {
 		"showStartingYear": {
-			"type": "boolean"
+			"type": "boolean",
+			"default": false
 		},
 		"startingYear": {
 			"type": "string",
