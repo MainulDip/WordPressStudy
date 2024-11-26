@@ -301,3 +301,7 @@ Block attributes are generally specified in the block.json file, and the editor 
 ```
 
 docs https://developer.wordpress.org/block-editor/reference-guides/block-api/block-attributes/
+
+
+### Official available Editor UI Components | `@wordpress/components`:
+Get IDE intellisense by installing `npm i @wordpress/components -D`
