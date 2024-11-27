@@ -285,7 +285,7 @@ export default function Edit() {
 Block Wrapper : https://developer.wordpress.org/block-editor/getting-started/fundamentals/block-wrapper/
 
 
-### Block attributes:
+### Block attributes and exposure in js files:
 Attributes are used to store custom data for block’s markup and content.
 Block attributes are generally specified in the block.json file, and the editor ui for those attribute values needs to be hooked in `edit.js`
 
@@ -311,9 +311,30 @@ export default function Edit({attribute, setAttribute}) {
 
 docs on block attributes https://developer.wordpress.org/block-editor/reference-guides/block-api/block-attributes/
 
+### Block attributes exposer to `render.php`:
+These 3 variables will be available in the dynamic php file
+`$attributes` (array): The block attributes.
+`$content` (string): The block default content.
+`$block` (WP_Block): The block instance/object.
+
+```php
+// printing those variables to inspect
+<?php 
+echo "<p>\$attributes:</p> <pre>" . var_export($attributes, true) . "</pre>";
+echo "<p>\$content:</p> <pre>" . var_export($content, true) . "</pre>";
+echo "<p>\$block:</p> <pre>" . var_export($block, true) . "</pre>"; 
+?>
+```
 
 ### Official available Editor UI Components | `@wordpress/components`:
 Get IDE intellisense by installing `npm i @wordpress/components -D`
+
+### Dynamic vs Static vs Hybrid Block:
+Dynamic: its block markup and associated attributes are stored into DB but its HTML `output` is not stored, rather rendered dynamically by php `render.php`
+
+Static: store the block markup, attributes, and HTML output in the database. also can be further enhanced dynamically on the front end. For structural changes (removing the block plugin), static block needs a fallback markup so that it will work all on cases. 
+
+Hybrid Block: combination of both
 
 
 ### Questions to solve:
