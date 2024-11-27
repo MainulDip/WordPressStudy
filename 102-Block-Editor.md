@@ -284,6 +284,13 @@ export default function Edit() {
 
 Block Wrapper : https://developer.wordpress.org/block-editor/getting-started/fundamentals/block-wrapper/
 
+### `save.js`:
+The callback functional react component of the `registerBlockType` 's save prop is the actual code thats gonna be saved to the DB.
+
+Switching the Block Editor View to `code` view will show the output of `save.js`. Where the visual editor view will show the `edit` callback component.
+
+It can take `attributes` prop
+
 
 ### Block attributes and exposure in js files:
 Attributes are used to store custom data for block’s markup and content.

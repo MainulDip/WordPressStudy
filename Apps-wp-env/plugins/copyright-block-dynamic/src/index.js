@@ -2,6 +2,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import './style.scss';
 import Edit from './edit';
 import metadata from './block.json';
+import Save from "./save";
 
 export const DOMAIN = "copyright-block-dynamic";
 
@@ -19,4 +20,5 @@ const calendarIcon = (
 registerBlockType( metadata.name, {
 	edit: Edit,
 	icon: calendarIcon,
+    save: Save
 } );
