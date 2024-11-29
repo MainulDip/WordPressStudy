@@ -39,6 +39,7 @@ function Edit({
   setAttributes
 }) {
   const {
+    fallbackCurrentYear,
     showStartingYear,
     startingYear
   } = attributes;
@@ -49,6 +50,14 @@ function Edit({
   // 	if (!showStartingYear) setAttributes({ startingYear: "" })
   // }, [showStartingYear]);
 
+  const currentYear = new Date().getFullYear().toString();
+  (0,react__WEBPACK_IMPORTED_MODULE_5__.useEffect)(() => {
+    if (currentYear !== fallbackCurrentYear) {
+      setAttributes({
+        fallbackCurrentYear: currentYear
+      });
+    }
+  }, [currentYear, fallbackCurrentYear, setAttributes]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
@@ -144,10 +153,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Save() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+function Save({
+  attributes
+}) {
+  const {
+    fallbackCurrentYear,
+    showStartingYear,
+    startingYear
+  } = attributes;
+  if (!fallbackCurrentYear) {
+    return null;
+  }
+  let displayDate;
+  if (showStartingYear && startingYear) {
+    displayDate = startingYear + '-' + fallbackCurrentYear;
+  } else {
+    displayDate = fallbackCurrentYear;
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save(),
-    children: 'Copyright Date Block – hello from the saved content! '
+    children: ["\xA9 ", displayDate]
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Save);
@@ -244,7 +269,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/copyright-block-dynamic","version":"0.1.0","title":"CopyrightD","category":"widgets","description":"Copyright icon following string","example":{},"attributes":{"showStartingYear":{"type":"boolean","default":false},"startingYear":{"type":"string","default":""}},"supports":{"color":{"background":false,"text":true},"html":false,"typography":{"fontSize":true}},"textdomain":"copyright-block-dynamic","editorScript":"file:./index.js","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/copyright-block-dynamic","version":"0.1.0","title":"CopyrightD","category":"widgets","description":"Copyright icon following string","example":{},"attributes":{"fallbackCurrentYear":{"type":"string"},"showStartingYear":{"type":"boolean","default":false},"startingYear":{"type":"string","default":""}},"supports":{"color":{"background":false,"text":true},"html":false,"typography":{"fontSize":true}},"textdomain":"copyright-block-dynamic","editorScript":"file:./index.js","render":"file:./render.php"}');
 
 /***/ })
 

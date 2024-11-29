@@ -11,13 +11,21 @@ import { useEffect } from "react"
 const currentYear = new Date().getFullYear().toString();
 
 export default function Edit({ attributes, setAttributes }) {
-	const { showStartingYear, startingYear } = attributes;
+	const { fallbackCurrentYear, showStartingYear, startingYear } = attributes;
 	// console.log(showStartingYear, startingYear);
 
 	// useEffect(() => {
 	// 	console.log(`useEffect showStartingYear = ${showStartingYear}`)
 	// 	if (!showStartingYear) setAttributes({ startingYear: "" })
 	// }, [showStartingYear]);
+
+	const currentYear = new Date().getFullYear().toString();
+
+	useEffect(()=>{
+		if ( currentYear !== fallbackCurrentYear ) {
+			setAttributes( { fallbackCurrentYear: currentYear } );
+		}
+	},[currentYear, fallbackCurrentYear, setAttributes])
 	
 
 	return (

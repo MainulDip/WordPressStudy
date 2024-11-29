@@ -8,6 +8,9 @@
   "description": "Copyright icon following string",
   "example": {},
   "attributes": {
+    "fallbackCurrentYear": {
+      "type": "string"
+    },
     "showStartingYear": {
       "type": "boolean",
       "default": false

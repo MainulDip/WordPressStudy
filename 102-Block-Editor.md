@@ -284,13 +284,39 @@ export default function Edit() {
 
 Block Wrapper : https://developer.wordpress.org/block-editor/getting-started/fundamentals/block-wrapper/
 
-### `save.js`:
-The callback functional react component of the `registerBlockType` 's save prop is the actual code thats gonna be saved to the DB.
+### `save.js` | returned component is available in `render.php` 's `$content` variable:
+The callback functional react component of the `registerBlockType` 's save prop is the actual code thats gonna be saved to the DB. Like edit.js it can take `attributes` prop
 
 Switching the Block Editor View to `code` view will show the output of `save.js`. Where the visual editor view will show the `edit` callback component.
 
-It can take `attributes` prop
+* the `edit'js` is responsible for editor view and can only mutate the attributes which are returned as the `$attributes` variable in `render.php`
+* `save.js` is responsible for static content with markup that will be saved all together in the db when the post will be saved. 
+```js
+import React from 'react'
+import { useBlockProps } from '@wordpress/block-editor';
 
+function Save({ attributes }) {
+  const { fallbackCurrentYear, showStartingYear, startingYear } = attributes;
+
+  if (!fallbackCurrentYear) {
+    return null;
+  }
+
+  let displayDate;
+
+  if (showStartingYear && startingYear) {
+    displayDate = startingYear + '-' + fallbackCurrentYear;
+  } else {
+    displayDate = fallbackCurrentYear;
+  }
+
+  return (
+    <p {...useBlockProps.save()}>© {displayDate}</p>
+  );
+}
+
+export default Save
+```
 
 ### Block attributes and exposure in js files:
 Attributes are used to store custom data for block’s markup and content.
