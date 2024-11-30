@@ -354,6 +354,7 @@ These 3 variables will be available in the dynamic php file
 // printing those variables to inspect
 <?php 
 echo "<p>\$attributes:</p> <pre>" . var_export($attributes, true) . "</pre>";
+// $content will only populate if there is the save callback of the registerBlockType function
 echo "<p>\$content:</p> <pre>" . var_export($content, true) . "</pre>";
 echo "<p>\$block:</p> <pre>" . var_export($block, true) . "</pre>"; 
 ?>
@@ -367,7 +368,7 @@ Dynamic: its block markup and associated attributes are stored into DB but its H
 
 Static: store the block markup, attributes, and HTML output in the database. also can be further enhanced dynamically on the front end. For structural changes (removing the block plugin), static block needs a fallback markup so that it will work all on cases. 
 
-Hybrid Block: combination of both
+Hybrid Block: combination of both dynamic (`render.php`) and static (`save.js`) block
 
 
 ### Questions to solve:
