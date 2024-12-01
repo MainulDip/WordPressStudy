@@ -370,6 +370,28 @@ Static: store the block markup, attributes, and HTML output in the database. als
 
 Hybrid Block: combination of both dynamic (`render.php`) and static (`save.js`) block
 
+### Interactivity API:
+It's kinda `alpine.js` version of wordpress. Added in wp 6.5 as a way to interact with the block (animation, mutation, etc). Only dynamic block's are supported (as it requires `render.php`)
+
+Interactivity API allows to add behaviors to blocks that will happen in response to user interactions. It extends standard HTML with `directives`, which are special `data attributes` (usually inserted into `render.php`) that can listen to and modify the behavior of any DOM element. With directives, you can manipulate the DOM, apply CSS styles, handle user input, and much more.
+
+To enable interactivity api in a block plugin, `block.json` needs
+```json
+"supports": {
+    "interactivity": true
+},
+```
+
+Docs: https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/
+Tutorial: https://developer.wordpress.org/news/2024/04/11/a-first-look-at-the-interactivity-api/
+
+
+### Steeps to utilize `Interactivity` API:
+- Add directives as data attributes to the HTML markup in `render.php` and global state (if any)
+- Create a store with the logic (state, actions, or callbacks) needed for interactivity (usually inside `view.js`)
+    - Actions (function) update the global state or the local context, which, in turn, updates the HTML element connected to either of them.
+    - callbacks will run as side effects (not directly invoked by user interaction, rather by state change)
+
 
 ### Questions to solve:
 => How to get all the type information of `registerBlockType` fun

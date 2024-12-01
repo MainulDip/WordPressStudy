@@ -70,7 +70,7 @@ Both are PHP baaed, But Hybrid will include `theme.json` file and other FSE feat
 
 ### Ongoing:
 - setup media and mysql db sync across machines via git repository pull
-- block development https://developer.wordpress.org/block-editor/getting-started/tutorial/#updating-save-js
+- block development https://developer.wordpress.org/news/2024/04/11/a-first-look-at-the-interactivity-api/
 ### Next
 
 => Interactivity API (Block Editor) https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/iapi-quick-start-guide/
