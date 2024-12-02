@@ -389,9 +389,223 @@ Tutorial: https://developer.wordpress.org/news/2024/04/11/a-first-look-at-the-in
 ### Steeps to utilize `Interactivity` API:
 - Add directives as data attributes to the HTML markup in `render.php` and global state (if any)
 - Create a store with the logic (state, actions, or callbacks) needed for interactivity (usually inside `view.js`)
-    - Actions (function) update the global state or the local context, which, in turn, updates the HTML element connected to either of them.
+    - actions update the global state or the local context, which, in turn, updates the HTML element connected to either of them.
     - callbacks will run as side effects (not directly invoked by user interaction, rather by state change)
+    - state property can be use to define the derived state or context using a getter function
 
+* view.js file
+```js
+import { store, getContext } from '@wordpress/interactivity';
+
+const { state } = store( 'create-block', {
+	state: {
+		get themeText() {
+			return state.isDark ? state.darkText : state.lightText;
+		},
+	},
+	actions: {
+		toggleOpen() {
+			const context = getContext();
+			context.isOpen = ! context.isOpen;
+		},
+		toggleTheme() {
+			state.isDark = ! state.isDark;
+		},
+	},
+	callbacks: {
+		logIsOpen: () => {
+			const { isOpen } = getContext();
+			// Log the value of `isOpen` each time it changes.
+			console.log( `Is open: ${ isOpen }` );
+		},
+	},
+} );
+```
+
+* render.php
+```php
+<?php
+// Generates a unique id for aria-controls.
+$unique_id = wp_unique_id( 'p-' );
+
+// Adds the global state.
+wp_interactivity_state(
+	'create-block',
+	array(
+		'isDark'    => false,
+		'darkText'  => esc_html__( 'Switch to Light', 'donation-calculator' ),
+		'lightText' => esc_html__( 'Switch to Dark', 'donation-calculator' ),
+		'themeText'	=> esc_html__( 'Switch to Dark', 'donation-calculator' ),
+	)
+);
+?>
+
+<div
+	<?php echo get_block_wrapper_attributes(); ?>
+	data-wp-interactive="create-block"
+	<?php echo wp_interactivity_data_wp_context( array( 'isOpen' => false ) ); ?>
+	data-wp-watch="callbacks.logIsOpen"
+	data-wp-class--dark-theme="state.isDark"
+>
+	<button
+		data-wp-on--click="actions.toggleTheme"
+		data-wp-text="state.themeText"
+	></button>
+
+	<button
+		data-wp-on--click="actions.toggleOpen"
+		data-wp-bind--aria-expanded="context.isOpen"
+		aria-controls="<?php echo esc_attr( $unique_id ); ?>"
+	>
+		<?php esc_html_e( 'Toggle', 'donation-calculator' ); ?>
+	</button>
+
+	<p
+		id="<?php echo esc_attr( $unique_id ); ?>"
+		data-wp-bind--hidden="!context.isOpen"
+	>
+		<?php
+			esc_html_e( 'Donation Calculator - hello from an interactive block!', 'donation-calculator' );
+		?>
+	</p>
+</div>
+```
+
+
+### Directives | `data-wp-<name>` | `data-wp-interactive="store-name"`:
+All wordpress specific data directive follows `data-wp-directiveName` syntax. 
+
+`data-wp-interactive` directive activates interactivity for the wrapping html tag and its children through the Interactivity API. The first parameter of store function in `view.js` file should match with the data-wp-interactive value.
+
+All directives https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/api-reference/#list-of-directives
+
+### php Directives | Global State & Local Context:
+`wp_interactivity_state()` php function is used to store global state. Which are available in the `view.js` file as `state` object.
+
+To store scoped information, `wp_interactivity_data_wp_context()` php function is used, usually in wrapping html element/div, and the stored information will be available through `useContext()` call in `view.js`. The context is local and is available to containing element/div and all its children, but not to other blocks.
+
+### Directives non-php | `data-wp-context` |  `data-wp-on--<event>` | `data-wp-bind--<>`:
+context can also be defined as non-php directives like `data-wp-context='{ "foo": "bar" }'`. Behind the scene php's wp_interactivity_data_wp_context() function returns a stringify json object like this. 
+
+```html
+<div data-wp-context='{ "foo": "bar" }'>
+    <span data-wp-text="context.foo"><!-- Will output: "bar" --></span>
+
+    <div data-wp-context='{ "bar": "baz" }'>
+        <span data-wp-text="context.foo"><!-- Will output: "bar" --></span>
+
+        <div data-wp-context='{ "foo": "bob" }'>
+            <span data-wp-text="context.foo"><!-- Will output: "bob" --></span>
+        </div>
+    </div>
+</div>
+```
+
+`data-wp-on--[event]` is for listing DOM events and firing store's function, ie `data-wp-on--click="actions.toggle"`
+
+`data-wp-bind--[attribute]` allows setting HTML attributes on elements based on a boolean or string value.
+
+```html
+<li data-wp-context='{ "isMenuOpen": false }'>
+    <button
+        data-wp-on--click="actions.toggleMenu"
+        data-wp-bind--aria-expanded="context.isMenuOpen"
+    >
+        Toggle
+    </button>
+    <div data-wp-bind--hidden="!context.isMenuOpen">
+        <span>Title</span>
+        <ul>
+            SUBMENU ITEMS
+        </ul>
+    </div>
+</li>
+```
+
+`data-wp-class--[css-className]` adds or removes a class to an HTML element, depending on a boolean value. ie, 
+
+`data-wp-class--selected="context.isSelected"` will add the class to the html element if `context.isSelected` is true, if not, it will be removed.
+
+`data-wp-style--[css-property]` adds or removes inline style to an HTML element, depending on its boolean value. 
+```html
+<div data-wp-context='{ "color": "red" }'>
+    <button data-wp-on--click="actions.toggleContextColor">
+        Toggle Color Text
+    </button>
+    <p data-wp-style--color="context.color">Hello World!</p>
+</div>
+>
+```
+
+`data-wp-text` sets the inner text of an HTML element
+
+`data-wp-watch` runs a callback when the node is created and runs it again when the state or context changes
+```html
+<div data-wp-context='{ "counter": 0 }' data-wp-watch="callbacks.logCounter">
+    <p>Counter: <span data-wp-text="context.counter"></span></p>
+    <button data-wp-on--click="actions.increaseCounter">+</button>
+    <button data-wp-on--click="actions.decreaseCounter">-</button>
+</div>
+```
+
+`data-wp-init` runs a callback only when the node is created `<div data-wp-init="callbacks.logTimeInit">`
+
+`data-wp-run` runs the passed callback during the node’s render execution. Inside `view.js`, hooks like useState, useWatch, or useEffect can be custom composed inside the passed callback. https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/api-reference/#wp-run
+
+`data-wp-key` assigns a unique key to an element to help the Interactivity API identify it when iterating through arrays of elements.
+
+`data-wp-each` directive is intended to render a list of elements
+
+`data-wp-each-child` ensures hydration works as expected for server-side rendered lists.
+
+### Accessing data inside of store's callback | `view.js`:
+The store() function can be called multiple times. All store() calls with the same namespace return the same references, i.e., the same state, actions, etc., containing the result of merging all the store parts passed.
+
+```js
+store( 'myPlugin', {
+    state: {
+        someValue: 1,
+    },
+} );
+
+const { state } = store( 'myPlugin', {
+    actions: {
+        someAction() {
+            state.someValue; // = 1
+        },
+    },
+} );
+```
+
+`getContext()` To access the context inside an action, derived state, or side effect
+`getElement` To access the reference of the html element
+
+```js
+const { state } = store( 'myPlugin', {
+    state: {
+        get someDerivedValue() {
+            const context = getContext();
+            const { ref } = getElement();
+            // ...
+        },
+    },
+    actions: {
+        someAction() {
+            const context = getContext();
+            const { ref } = getElement();
+            // ...
+        },
+    },
+    callbacks: {
+        someEffect() {
+            const context = getContext();
+            const { ref } = getElement();
+            // ...
+        },
+    },
+} );
+```
+Docs https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/api-reference/#accessing-data-in-callbacks
 
 ### Questions to solve:
 => How to get all the type information of `registerBlockType` fun

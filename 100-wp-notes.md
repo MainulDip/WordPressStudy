@@ -59,7 +59,7 @@ Both are PHP baaed, But Hybrid will include `theme.json` file and other FSE feat
     - Create Content
 - Taxonomies (terms, tag, categories) | Group content
     - terms/tags are free floating grouping option and `non-hierarchy`
-    - category for hierarchy (parent child relationship) grouping. Categories can have sub category
+    - category for hierarchy (parent child relationship) grouping.... Categories can have sub category
 - Custom (post meta) fields | Attach (extra) fields to the content
 
 ### Plugin AFC (Advanced Custom Fields) | Extend the default WP data types using gui:
@@ -71,6 +71,7 @@ Both are PHP baaed, But Hybrid will include `theme.json` file and other FSE feat
 ### Ongoing:
 - setup media and mysql db sync across machines via git repository pull
 - block development https://developer.wordpress.org/news/2024/04/11/a-first-look-at-the-interactivity-api/
+`Creating a donation calculator` of the https://developer.wordpress.org/news/2024/04/11/a-first-look-at-the-interactivity-api/
 ### Next
 
 => Interactivity API (Block Editor) https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/iapi-quick-start-guide/

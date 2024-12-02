@@ -4,7 +4,7 @@ The train of consequences 💀 There ain't no turning back
 ### `theme.json` Configuration file | Optional but vvi:
 it's a configuration file for enabling certain wordpress settings, style specific elements and blocks, and which templates and template parts to register.
 
-`theme.json` configuration will be reflected in places like the `post`, `template`, and `site editors` in the WordPress admin dashboard. Custom styles, in particular, will be reflected in the Styles interface
+`theme.json` configuration will be reflected in places like the `post`, `template`, & `site editors` in the WordPress admin dashboard. Custom styles, in particular, will be reflected in the Styles interface
 
 Some of the things you can do with theme.json are:
 
