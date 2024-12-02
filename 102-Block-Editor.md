@@ -141,7 +141,7 @@ add_action( 'enqueue_block_editor_assets', 'example_project_enqueue_editor_asset
 
 ```
 
-Docs: https://developer.wordpress.org/block-editor/how-to-guides/enqueueing-assets-in-the-editor/
+Docs: https://developer.wordpress.org/block-editor/how-to-guides/enqueueing-assets-in-the-editor/.......
 
 ### Code Quality and Tests:
 Use `wp-scripts` to setup linters and test

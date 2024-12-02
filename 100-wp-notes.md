@@ -73,6 +73,5 @@ Both are PHP baaed, But Hybrid will include `theme.json` file and other FSE feat
 - block development https://developer.wordpress.org/news/2024/04/11/a-first-look-at-the-interactivity-api/
 `Creating a donation calculator` of the https://developer.wordpress.org/news/2024/04/11/a-first-look-at-the-interactivity-api/
 ### Next
-
 => Interactivity API (Block Editor) https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/iapi-quick-start-guide/
-=> Interactivity API with typescript https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/core-concepts/using-typescript/
+=> Interactivity API with typescript https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/core-concepts/using-typescript/.......

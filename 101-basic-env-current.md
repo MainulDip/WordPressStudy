@@ -1,5 +1,5 @@
 ### Development Packages:
-`wp-env | @wordpress/env` for setting up a local WordPress environment and recommended tool for Gutenberg development. https://developer.wordpress.org/block-editor/getting-started/devenv/get-started-with-wp-env/
+`wp-env | @wordpress/env` for setting up a local WordPress environment and recommended tool for Gutenberg development. https://developer.wordpress.org/block-editor/getting-started/devenv/get-started-with-wp-env/.......
 
 `wp-now` lightweight tool for quickly testing WordPress releases, plugins, and themes locally. Its powered by `WordPress Playground` and still experimental....
 
