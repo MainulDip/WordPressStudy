@@ -22,6 +22,9 @@ import './editor.scss';
 import Edit from './edit';
 import metadata from './block.json';
 
+
+export const DOMAIN = "donation-calculator";
+
 /**
  * Every block starts by registering a new block type definition.
  *

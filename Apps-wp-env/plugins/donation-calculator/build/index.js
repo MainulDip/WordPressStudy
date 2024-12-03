@@ -16,44 +16,66 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
- */
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! . */ "./src/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
 
 
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
 
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
- *
- * @param {Object}   props               Properties passed to the function.
- * @param {Object}   props.attributes    Available block attributes.
- * @param {Function} props.setAttributes Function that updates individual attributes.
- *
- * @return {Element} Element to render.
- */
 
 function Edit({
   attributes,
   setAttributes
 }) {
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+  const {
+    price
+  } = attributes;
+  const exampleDonationAmount = 1000;
+  const trees = Math.floor(exampleDonationAmount / price);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     ...blockProps,
-    children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Donation Calculator – hello from the editor!', 'donation-calculator')
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Calculator settings", ___WEBPACK_IMPORTED_MODULE_3__.DOMAIN),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalNumberControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Set the price for one tree', ___WEBPACK_IMPORTED_MODULE_3__.DOMAIN),
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('The value will be used for calculations.', ___WEBPACK_IMPORTED_MODULE_3__.DOMAIN),
+          value: price,
+          min: 1,
+          onChange: value => setAttributes({
+            price: Number(value)
+          })
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
+      action: "",
+      className: "calculator",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+        htmlFor: "contribution-value",
+        className: "calculator-label",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Check the impact of your donation:', ___WEBPACK_IMPORTED_MODULE_3__.DOMAIN)
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        class: "calculator-input",
+        children: ["$", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+          disabled: true,
+          value: exampleDonationAmount,
+          className: "calculator-input-form",
+          type: "number",
+          id: "contribution-value"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("output", {
+        className: "calculator-output",
+        children: [(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Your '), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
+          children: ["$", exampleDonationAmount]
+        }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)(' donation will enable us to plant '), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+          children: trees
+        }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)(' trees.')]
+      })]
+    })]
   });
 }
 
@@ -66,6 +88,9 @@ function Edit({
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DOMAIN: () => (/* binding */ DOMAIN)
+/* harmony export */ });
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
@@ -95,6 +120,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
+const DOMAIN = "donation-calculator";
 
 /**
  * Every block starts by registering a new block type definition.
@@ -164,6 +190,16 @@ module.exports = window["wp"]["blocks"];
 
 /***/ }),
 
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["components"];
+
+/***/ }),
+
 /***/ "@wordpress/i18n":
 /*!******************************!*\
   !*** external ["wp","i18n"] ***!
@@ -180,7 +216,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/donation-calculator","version":"0.1.0","title":"Donation Calculator","category":"widgets","icon":"media-interactive","description":"An interactive block with the Interactivity API.","example":{},"supports":{"interactivity":true},"textdomain":"donation-calculator","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScriptModule":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/donation-calculator","version":"0.1.0","title":"Donation Calculator","category":"widgets","icon":"media-interactive","description":"An interactive block with the Interactivity API.","example":{},"supports":{"interactivity":true},"attributes":{"price":{"type":"number","default":15}},"textdomain":"donation-calculator","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScriptModule":"file:./view.js"}');
 
 /***/ })
 

@@ -3,7 +3,7 @@
 
 `@wordpress/create-block` package is an officially supported tool to scaffold the structure of files needed to create and register a block. 
 
-`wp-scripts` is for node.js dev server, build setups and maintaining library compatibility. Comes default with `create-block`. 
+`wp-scripts` is for node.js dev server, build setups and maintaining library compatibility. Comes default with `create-block`.......
 
 ### When Docker needs `sudo`:
 add group `this` and `sudo usermod -aG docker $USER`
