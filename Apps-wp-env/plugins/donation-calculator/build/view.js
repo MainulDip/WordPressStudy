@@ -68,6 +68,18 @@ const {
   state: {
     get themeText() {
       return state.isDark ? state.darkText : state.lightText;
+    },
+    get donation() {
+      const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
+      return `$${context.contribution}`;
+    },
+    get trees() {
+      const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
+      return Math.floor(context.contribution / context.price);
+    },
+    get show() {
+      const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
+      return context.contribution > 0;
     }
   },
   actions: {
@@ -77,6 +89,10 @@ const {
     },
     toggleTheme() {
       state.isDark = !state.isDark;
+    },
+    calculate(e) {
+      const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
+      context.contribution = Number(e.target.value);
     }
   },
   callbacks: {
