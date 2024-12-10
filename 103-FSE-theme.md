@@ -8,6 +8,18 @@ The train of consequences 💀 There ain't no turning back
 
 The `Create Block Theme` plugin is an official, first-party plugin that WordPress contributors maintain. The plugin is more robust and it has many more options for exporting theme. One thing it does not support yet is uploading a custom screenshot. 
 
+### Data & Plugins for theme development (official):
+Data - xml dummy data for import https://codex.wordpress.org/Theme_Unit_Test
+
+Plugins to aid theme development https://developer.wordpress.org/themes/getting-started/tools-and-setup/#plugins
+
+`Theme Check` Tests theme for compliance with the latest WordPress standards and practices
+`Debug Bar` Adds an admin bar to the WordPress admin and provides a central location for debugging
+`Query Monitor` Allows debugging of database queries, API requests, and AJAX used to generate theme pages and functionality
+`Log Deprecated Notices` Logs incorrect function usage, deprecated file usage, and deprecated function usage 
+`Monster Widget` (classic themes only) Consolidates the core WordPress widgets into a single widget, making it easier to test them all at once 
+
+
 ### `theme.json` Configuration file | Optional but vvi:
 it's a configuration file for enabling certain wordpress settings, style specific elements and blocks, and which templates and template parts to register.
 
