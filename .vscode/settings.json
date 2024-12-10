@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
         "textdomain"
-    ]
+    ],
+    "git.ignoreLimitWarning": true
 }

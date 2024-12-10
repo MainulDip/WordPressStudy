@@ -63,6 +63,9 @@ To scaffold a block plugin with default config
 To scaffold with interactive mode
 - `npx @wordpress/create-block@latest`
 
+Scaffold with interactive mode and template together, choose typescript option if desired
+- `npx @wordpress/create-block@latest --template @wordpress/create-block-interactive-template`
+
 With other options, a dynamic block will be created named "my-plugin"
 - `npx @wordpress/create-block@latest --namespace="my-plugin" --slug="my-block" --variant="dynamic"`
 
@@ -606,6 +609,9 @@ const { state } = store( 'myPlugin', {
 } );
 ```
 Docs https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/api-reference/#accessing-data-in-callbacks
+
+### Block Locking
+https://developer.wordpress.org/block-editor/reference-guides/block-api/block-templates/#locking
 
 ### Questions to solve:
 => How to get all the type information of `registerBlockType` fun
