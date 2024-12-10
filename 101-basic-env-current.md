@@ -19,7 +19,7 @@ Also, for block plugin `npx @wordpress/create-block@latest <block-plugin-name>` 
 Then navigate to an existing plugin directory, theme directory, or a new working directory in the terminal and run
 - `wp-env start` or `npm run start wp-env` and `wp-env stop` to stop
 
-after completion, access the local environment at: http://localhost:8888. Log into the WordPress dashboard using username `admin` and password `password`.
+after completion, access the local environment at: http://localhost:8888. Log into the WordPress dashboard using username `admin` and password `password`.......
 
 For custom env config use `.wp-env.json`, details on `@wordpress/env package`
 

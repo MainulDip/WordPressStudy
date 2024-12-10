@@ -1,6 +1,13 @@
 ### FSE Theming (Full Site Editing):
 My thinking is derailed 🤪 I'm tied up to the tracks 
 The train of consequences 💀 There ain't no turning back
+
+
+### Generating Block Theme:
+2 most suggested methods are `using latest wordpress official theme` and/or using `Create Block Theme` official plugin.
+
+The `Create Block Theme` plugin is an official, first-party plugin that WordPress contributors maintain. The plugin is more robust and it has many more options for exporting theme. One thing it does not support yet is uploading a custom screenshot. 
+
 ### `theme.json` Configuration file | Optional but vvi:
 it's a configuration file for enabling certain wordpress settings, style specific elements and blocks, and which templates and template parts to register.
 
