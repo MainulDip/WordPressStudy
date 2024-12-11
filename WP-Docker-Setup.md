@@ -12,3 +12,18 @@ https://stackoverflow.com/questions/29245216/write-in-shared-volumes-docker/2925
 
 ### Docker WordPress Advanced Guide:
 https://ashishjain-95034.medium.com/mastering-local-wordpress-development-with-docker-a-quick-step-by-step-guide-5a5c9d83b071
+
+### WordPress Docker Complete Dev Setup:
+- install necessary plugins and themes
+- mysql database dump and sync | local volume
+- wp-content directory dump and sync | local volume
+- install necessary php extension
+- add custom domain and map to the port
+- Enable HTTPS
+- WordPress Multisite (Local and Production)
+
+```sh
+FROM php:7.4-apache
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+```
+
