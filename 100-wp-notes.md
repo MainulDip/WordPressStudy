@@ -73,5 +73,7 @@ Both are PHP baaed, But Hybrid will include `theme.json` file and other FSE feat
 - block development https://developer.wordpress.org/news/2024/04/11/a-first-look-at-the-interactivity-api/
 Fast look at theme development, Docker setups and jump into woo + _underscores vid
 ### Next
-=> Interactivity API (Block Editor) https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/iapi-quick-start-guide/
-=> Interactivity API with typescript https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/core-concepts/using-typescript/.......
+=> (Done) Interactivity API (Block Editor) https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/iapi-quick-start-guide/
+=> (Done) Interactivity API with typescript https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/core-concepts/using-typescript/.......
+
+=> WP-Docker & wp-cli & composer (https://webjump.ai/en/composer-what-it-is-how-to-use-it-and-how-to-install-it/) && java cross-platform jdk manager (find bookmarks on chrome)
