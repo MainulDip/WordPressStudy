@@ -68,6 +68,14 @@ Both are PHP baaed, But Hybrid will include `theme.json` file and other FSE feat
 ### AFC Free vs Pro:
 
 
+### Docker WP Tasks Sequential:
+- Setup Basic Docker Compose WordPress
+- Setup using DockerFile and compose
+- DockerFile with custom php extensions and compose
+- Dockerfile for php extensions + Compose with wp-cli for default plugins and theme
+- Https
+
+
 ### Ongoing:
 - setup media and mysql db sync across machines via git repository pull
 - block development https://developer.wordpress.org/news/2024/04/11/a-first-look-at-the-interactivity-api/

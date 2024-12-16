@@ -611,7 +611,7 @@ const { state } = store( 'myPlugin', {
 Docs https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/api-reference/#accessing-data-in-callbacks
 
 ### Block Locking
-https://developer.wordpress.org/block-editor/reference-guides/block-api/block-templates/#locking
+https://developer.wordpress.org/block-editor/reference-guides/block-api/block-templates/#locking.......
 
 ### Questions to solve:
 => How to get all the type information of `registerBlockType` fun

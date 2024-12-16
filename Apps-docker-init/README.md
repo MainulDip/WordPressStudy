@@ -6,6 +6,13 @@ We need 2 files
 1. Dockerfile 
 2. docker-compose
 
+Mission
+- theme and plugin sync
+- media and db sync
+- php extension
+- default theme and plugins
+- https and multi site
+
 ### Dockerfile
 ```sh
 FROM php:7.4-apache
