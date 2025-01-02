@@ -1,0 +1,31 @@
+services:
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress-docker-wp-1-mysql-user
+      WORDPRESS_DB_PASSWORD: wordpress-docker-wp-1-mysql-password
+      WORDPRESS_DB_NAME: wordpress-docker-wp-1-mysql-db
+    volumes:
+      - ./wordpress:/var/www/html
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpress-docker-wp-1-mysql-db
+      MYSQL_USER: wordpress-docker-wp-1-mysql-user
+      MYSQL_PASSWORD: wordpress-docker-wp-1-mysql-password
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - ./db:/var/lib/mysql
+
+volumes:
+  wordpress:
+  db:
